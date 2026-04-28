@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Crisis Command - Tactical Map</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#2d1b18",
+                        "on-primary-fixed-variant": "#930005",
+                        "on-secondary-fixed-variant": "#004493",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "surface-dim": "#1f0f0d",
+                        "on-secondary-container": "#00285c",
+                        "on-primary-fixed": "#410001",
+                        "surface-container-low": "#291715",
+                        "surface-bright": "#493431",
+                        "primary-container": "#ff5545",
+                        "outline": "#ad8883",
+                        "on-primary": "#690003",
+                        "error-container": "#93000a",
+                        "secondary-container": "#4b8eff",
+                        "tertiary-container": "#1d9cc3",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "background": "#1f0f0d",
+                        "on-tertiary-container": "#002e3c",
+                        "primary-fixed": "#ffdad5",
+                        "on-tertiary-fixed-variant": "#004d63",
+                        "outline-variant": "#5d3f3b",
+                        "on-background": "#fcdbd6",
+                        "inverse-primary": "#c0000a",
+                        "surface-container-lowest": "#190a08",
+                        "on-error": "#690005",
+                        "on-secondary-fixed": "#001a41",
+                        "surface-container-high": "#392522",
+                        "primary": "#ffb4aa",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#1f0f0d",
+                        "tertiary": "#68d3fc",
+                        "inverse-surface": "#fcdbd6",
+                        "on-surface": "#fcdbd6",
+                        "surface-container-highest": "#44302d",
+                        "secondary": "#adc6ff",
+                        "tertiary-fixed": "#bbe9ff",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#44302d",
+                        "on-surface-variant": "#e7bdb7",
+                        "inverse-on-surface": "#402b29",
+                        "tertiary-fixed-dim": "#68d3fc",
+                        "on-primary-container": "#5c0002",
+                        "surface-tint": "#ffb4aa",
+                        "on-secondary": "#002e69",
+                        "on-tertiary-fixed": "#001f29",
+                        "secondary-fixed": "#d8e2ff",
+                        "on-tertiary": "#003545"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "20px",
+                        "sm": "12px",
+                        "lg": "40px",
+                        "xs": "8px",
+                        "md": "24px",
+                        "base": "4px",
+                        "xl": "64px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Syne"],
+                        "body-lg": ["Syne"],
+                        "h1": ["Syne"],
+                        "badge": ["Space Mono"],
+                        "body-md": ["Syne"],
+                        "tactical-label": ["Space Mono"],
+                        "tactical-data": ["Space Mono"],
+                        "h3": ["Syne"]
+                    },
+                    "fontSize": {
+                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "h1": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "badge": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "tactical-label": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "tactical-data": ["14px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "h3": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+        .pulse-red {
+            box-shadow: 0 0 0 0 rgba(255, 85, 69, 0.7);
+            animation: pulse-red-anim 2s infinite;
+        }
+        @keyframes pulse-red-anim {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 85, 69, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(255, 85, 69, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 85, 69, 0); }
+        }
+        .pulse-green {
+            box-shadow: 0 0 0 0 rgba(104, 211, 252, 0.7);
+            animation: pulse-green-anim 2s infinite;
+        }
+        @keyframes pulse-green-anim {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(104, 211, 252, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(104, 211, 252, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(104, 211, 252, 0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen flex flex-col font-body-md overflow-hidden">
+<!-- TopAppBar -->
+<header class="bg-zinc-950 border-b border-zinc-800 flex justify-between items-center w-full px-4 h-16 fixed top-0 z-50">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-red-600" data-icon="security">security</span>
+<h1 class="text-xl font-black tracking-widest text-zinc-100 font-['Syne'] uppercase">CRISIS COMMAND</h1>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full border border-zinc-800 overflow-hidden">
+<img alt="Staff Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a security professional in a dark uniform with a focused expression, neutral studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkCzvlBFwPA9v29CphEF1OTWTbi1aP6_BFIv0zDaJqm75hyWxYBAt2FxVl5NJHqwmO4VLoWH75mCIH27ZNB0hwq4KkntYXaz2TNH7sMZNDgOYVMYVkT83v6GLre4VRGcPAgb_z13H5xctyQY70Pto_IQRRHPeFTMYNQqb_GRhZwkauvmJgz_sAXKS-4zZCdrUdmwHYgI0Je6bSEjbQx_s0h7V0af5tCsg3qriUvmjdEjuEDpRIkaRtCHiZP53ICGVQlgpU3Hamd4jL"/>
+</div>
+</div>
+</header>
+<!-- Main Map Canvas -->
+<main class="flex-1 relative w-full h-screen pt-16 pb-24">
+<!-- Floor Plan Map Background -->
+<div class="absolute inset-0 bg-[#080808] flex items-center justify-center">
+<div class="relative w-full h-full opacity-60 mix-blend-screen bg-[url('https://images.unsplash.com/photo-1544383335-9f79c6803efc?auto=format&amp;fit=crop&amp;q=80&amp;w=1200')] bg-center bg-cover" data-alt="Blueprint schematic of a luxury hotel floor plan with neon cyan lines on a pitch black background, technical architectural drawing style">
+</div>
+<!-- Map Overlay Grid -->
+<div class="absolute inset-0 bg-[linear-gradient(rgba(44,44,46,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(44,44,46,0.1)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+<!-- Incident Icons Overlay -->
+<!-- Sector G - Fire -->
+<div class="absolute top-[35%] left-[65%] flex flex-col items-center">
+<div class="pulse-red bg-primary-container text-on-primary-container p-3 rounded-full flex items-center justify-center z-10">
+<span class="material-symbols-outlined" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div class="mt-2 px-2 py-1 bg-zinc-950 border border-primary-container rounded text-primary-container font-badge text-badge">SECTOR G</div>
+</div>
+<!-- VIP Lounge - Medical -->
+<div class="absolute top-[55%] left-[25%] flex flex-col items-center">
+<div class="pulse-green bg-tertiary-container text-on-tertiary-container p-3 rounded-full flex items-center justify-center z-10">
+<span class="material-symbols-outlined" data-icon="medical_services" data-weight="fill" style="font-variation-settings: 'FILL' 1;">medical_services</span>
+</div>
+<div class="mt-2 px-2 py-1 bg-zinc-950 border border-tertiary-container rounded text-tertiary-container font-badge text-badge">VIP LOUNGE</div>
+</div>
+</div>
+<!-- Top UI Controls -->
+<div class="absolute top-4 left-0 right-0 px-4 flex flex-col gap-4 z-40">
+<!-- Search Bar -->
+<div class="relative group">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-zinc-500" data-icon="search">search</span>
+<input class="w-full bg-zinc-950/80 backdrop-blur-md border border-zinc-800 rounded-xl pl-12 pr-4 py-4 text-zinc-100 font-tactical-data focus:outline-none focus:border-zinc-100 transition-colors" placeholder="Sector/Room" type="text"/>
+</div>
+</div>
+<!-- Floating Action Buttons (FABs) -->
+<div class="absolute right-4 bottom-40 flex flex-col gap-3 z-40">
+<button class="w-12 h-12 bg-zinc-950/80 backdrop-blur-md border border-zinc-800 rounded-lg flex items-center justify-center text-zinc-100 hover:bg-zinc-900 transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+<button class="w-12 h-12 bg-zinc-950/80 backdrop-blur-md border border-zinc-800 rounded-lg flex items-center justify-center text-zinc-100 hover:bg-zinc-900 transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="remove">remove</span>
+</button>
+<button class="w-12 h-12 bg-zinc-100 border border-zinc-800 rounded-lg flex items-center justify-center text-zinc-950 hover:bg-zinc-200 transition-colors active:scale-90">
+<span class="material-symbols-outlined" data-icon="my_location">my_location</span>
+</button>
+</div>
+<!-- Incident Drawer -->
+<div class="absolute bottom-24 left-0 right-0 px-4 z-40">
+<div class="bg-zinc-950/90 backdrop-blur-xl border border-zinc-800 rounded-2xl p-4 shadow-2xl flex items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-1.5 h-12 bg-red-600 rounded-full"></div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="font-tactical-label text-red-600 uppercase">Active Incident</span>
+<span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+</div>
+<h2 class="font-h3 text-zinc-100 text-lg leading-tight">Sector G - Fire</h2>
+<div class="font-tactical-data text-zinc-500 text-xs mt-1">Status: Uncontained • 4:12m Elapsed</div>
+</div>
+</div>
+<button class="bg-zinc-100 text-zinc-950 font-['Syne'] font-bold px-6 py-3 rounded-xl active:scale-95 transition-transform">
+                    Quick Respond
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 bg-zinc-950/95 backdrop-blur-md border-t border-zinc-800 h-20">
+<div class="flex flex-col items-center justify-center text-zinc-500 py-1 px-3 hover:text-zinc-200 transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="analytics">analytics</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest">Status</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-zinc-100 text-zinc-950 rounded-lg py-1 px-3 transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="map" style="font-variation-settings: 'FILL' 1;">map</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest">Tactical</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 py-1 px-3 hover:text-zinc-200 transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="rss_feed">rss_feed</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest">Feed</span>
+</div>
+<div class="flex flex-col items-center justify-center text-zinc-500 py-1 px-3 hover:text-zinc-200 transition-all cursor-pointer">
+<span class="material-symbols-outlined mb-1" data-icon="account_circle">account_circle</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest">Profile</span>
+</div>
+</nav>
+</body></html>

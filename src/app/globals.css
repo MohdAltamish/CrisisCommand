@@ -1,26 +1,86 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --crisis-fire: #FF3B30;
+  --crisis-flood: #007AFF;
+  --crisis-earthquake: #FF9500;
+  --crisis-medical: #34C759;
+  --crisis-stampede: #AF52DE;
+  --status-active: #FF3B30;
+  --status-acknowledged: #FF9500;
+  --status-resolved: #34C759;
+  --bg-primary: #080808;
+  --bg-secondary: #111111;
+  --bg-card: #181818;
+  --bg-card-hover: #202020;
+  --text-primary: #F5F5F5;
+  --text-secondary: #8E8E93;
+  --border: #2C2C2E;
+  --border-subtle: #1C1C1E;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: 'Syne', sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
+
+.font-mono {
+  font-family: 'Space Mono', monospace;
+}
+
+/* SOS Pulse Animation */
+@keyframes sos-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); transform: scale(1); }
+  50% { box-shadow: 0 0 0 30px rgba(255, 59, 48, 0); transform: scale(1.03); }
+}
+
+@keyframes sos-ring {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fade-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes glow-fire {
+  0%, 100% { box-shadow: 0 0 8px rgba(255,59,48,0.4); }
+  50% { box-shadow: 0 0 20px rgba(255,59,48,0.8); }
+}
+
+.sos-btn {
+  animation: sos-pulse 1.8s ease-in-out infinite;
+}
+
+.slide-in {
+  animation: slide-in-right 0.3s ease-out forwards;
+}
+
+.fade-up {
+  animation: fade-up 0.4s ease-out forwards;
+}
+
+.glow-fire { animation: glow-fire 2s ease-in-out infinite; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }

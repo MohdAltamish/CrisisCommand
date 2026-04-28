@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&amp;family=Space+Mono:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-primary-container": "#5c0002",
+                "outline-variant": "#5d3f3b",
+                "on-tertiary-fixed": "#001f29",
+                "inverse-surface": "#fcdbd6",
+                "inverse-primary": "#c0000a",
+                "tertiary-container": "#1d9cc3",
+                "on-tertiary": "#003545",
+                "tertiary-fixed-dim": "#68d3fc",
+                "on-tertiary-fixed-variant": "#004d63",
+                "outline": "#ad8883",
+                "surface-bright": "#493431",
+                "surface-container-lowest": "#190a08",
+                "on-primary": "#690003",
+                "surface-container": "#2d1b18",
+                "surface-tint": "#ffb4aa",
+                "on-error-container": "#ffdad6",
+                "primary-container": "#ff5545",
+                "on-secondary-container": "#00285c",
+                "on-primary-fixed-variant": "#930005",
+                "tertiary": "#68d3fc",
+                "surface": "#1f0f0d",
+                "background": "#1f0f0d",
+                "surface-container-high": "#392522",
+                "surface-dim": "#1f0f0d",
+                "on-secondary-fixed-variant": "#004493",
+                "secondary": "#adc6ff",
+                "inverse-on-surface": "#402b29",
+                "on-error": "#690005",
+                "secondary-container": "#4b8eff",
+                "error-container": "#93000a",
+                "on-tertiary-container": "#002e3c",
+                "on-surface-variant": "#e7bdb7",
+                "primary": "#ffb4aa",
+                "on-background": "#fcdbd6",
+                "on-surface": "#fcdbd6",
+                "surface-container-low": "#291715",
+                "secondary-fixed-dim": "#adc6ff",
+                "tertiary-fixed": "#bbe9ff",
+                "on-secondary": "#002e69",
+                "error": "#ffb4ab",
+                "surface-variant": "#44302d",
+                "primary-fixed": "#ffdad5",
+                "on-secondary-fixed": "#001a41",
+                "on-primary-fixed": "#410001",
+                "secondary-fixed": "#d8e2ff",
+                "surface-container-highest": "#44302d",
+                "primary-fixed-dim": "#ffb4aa"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "xl": "64px",
+                "margin": "20px",
+                "sm": "12px",
+                "gutter": "16px",
+                "xs": "8px",
+                "lg": "40px",
+                "md": "24px",
+                "base": "4px"
+            },
+            "fontFamily": {
+                "h2": ["Syne"],
+                "tactical-data": ["Space Mono"],
+                "h3": ["Syne"],
+                "body-lg": ["Syne"],
+                "body-md": ["Syne"],
+                "badge": ["Space Mono"],
+                "tactical-label": ["Space Mono"],
+                "h1": ["Syne"]
+            },
+            "fontSize": {
+                "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "tactical-data": ["14px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                "h3": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                "badge": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
+                "tactical-label": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                "h1": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body { background-color: #080808; color: #F5F5F5; overflow-x: hidden; }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      .glass-card { background: rgba(24, 24, 24, 0.8); backdrop-filter: blur(12px); border: 1px solid #2C2C2E; }
+      .scanline { background: linear-gradient(to bottom, transparent 50%, rgba(255, 59, 48, 0.05) 50%); background-size: 100% 4px; pointer-events: none; }
+    </style>
+</head>
+<body class="font-body-md">
+<!-- TopAppBar -->
+<header class="fixed top-0 left-0 w-full z-[100] bg-[#080808] border-b border-[#2C2C2E] flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="bg-[#FF3B30] text-[#F5F5F5] p-1 rounded-sm text-xl font-black font-['Syne']">CRISISCOMMAND</div>
+<div class="h-6 w-px bg-[#2C2C2E]"></div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.6)]"></span>
+<span class="font-tactical-label text-emerald-500 tracking-widest uppercase">ALL CLEAR</span>
+</div>
+</div>
+<div class="hidden md:flex items-center gap-8 font-['Syne'] font-bold tracking-tight">
+<a class="text-[#F5F5F5] border-b-2 border-[#FF3B30] pb-1" href="#">Status</a>
+<a class="text-[#A1A1AA] hover:bg-[#111111] transition-colors p-2 rounded" href="#">Tactical</a>
+<a class="text-[#A1A1AA] hover:bg-[#111111] transition-colors p-2 rounded" href="#">Map</a>
+<a class="text-[#A1A1AA] hover:bg-[#111111] transition-colors p-2 rounded" href="#">Admin</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#F5F5F5] p-2 hover:bg-[#111111] transition-colors rounded-full">notifications_active</button>
+<button class="material-symbols-outlined text-[#F5F5F5] p-2 hover:bg-[#111111] transition-colors rounded-full">account_circle</button>
+</div>
+</header>
+<main class="pt-24 pb-24 md:pb-8 px-6 min-h-screen flex flex-col md:flex-row gap-6 max-w-screen-2xl mx-auto">
+<!-- Left Panel: Monitoring Overview -->
+<div class="w-full md:w-1/3 flex flex-col gap-6">
+<section class="glass-card p-6 rounded-[20px]">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-h3 text-h3 text-[#F5F5F5]">System State</h2>
+<span class="font-tactical-label text-[#52525B]">UTC 14:32:05</span>
+</div>
+<div class="space-y-4">
+<div class="p-4 bg-[#111111] border border-[#2C2C2E] rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-emerald-500">sensors</span>
+<div>
+<p class="font-tactical-label text-[#A1A1AA]">NETWORK LOAD</p>
+<p class="font-tactical-data text-[#F5F5F5]">0.04% - Nominal</p>
+</div>
+</div>
+<div class="p-4 bg-[#111111] border border-[#2C2C2E] rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-emerald-500">security</span>
+<div>
+<p class="font-tactical-label text-[#A1A1AA]">SECURITY PERIMETER</p>
+<p class="font-tactical-data text-[#F5F5F5]">Active &amp; Secure</p>
+</div>
+</div>
+<div class="p-4 bg-[#111111] border border-[#2C2C2E] rounded-xl flex items-center gap-4">
+<span class="material-symbols-outlined text-emerald-500">memory</span>
+<div>
+<p class="font-tactical-label text-[#A1A1AA]">RESPONSE UNITS</p>
+<p class="font-tactical-data text-[#F5F5F5]">12 Ready / 0 Deployed</p>
+</div>
+</div>
+</div>
+</section>
+<section class="glass-card p-6 rounded-[20px] flex-grow overflow-hidden relative">
+<div class="scanline absolute inset-0 opacity-20"></div>
+<h2 class="font-h3 text-h3 text-[#F5F5F5] mb-4">Feed</h2>
+<div class="space-y-3 opacity-40 select-none">
+<div class="flex gap-3 text-[11px] font-tactical-data">
+<span class="text-[#A1A1AA] shrink-0">14:30:12</span>
+<span class="text-[#F5F5F5]">System self-diagnostic completed... OK</span>
+</div>
+<div class="flex gap-3 text-[11px] font-tactical-data">
+<span class="text-[#A1A1AA] shrink-0">14:28:45</span>
+<span class="text-[#F5F5F5]">Perimeter sweep: Zone Alpha - 0 detections</span>
+</div>
+<div class="flex gap-3 text-[11px] font-tactical-data">
+<span class="text-[#A1A1AA] shrink-0">14:25:01</span>
+<span class="text-[#F5F5F5]">Automatic status update: All Clear</span>
+</div>
+<div class="flex gap-3 text-[11px] font-tactical-data">
+<span class="text-[#A1A1AA] shrink-0">14:20:12</span>
+<span class="text-[#F5F5F5]">Auth: Staff_ID_882 logged into Console</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Panel: Empty State Main Canvas -->
+<div class="w-full md:w-2/3 flex flex-col gap-6">
+<div class="glass-card rounded-[20px] flex-grow flex flex-col items-center justify-center p-12 text-center relative overflow-hidden">
+<!-- Background Decorative Map -->
+<div class="absolute inset-0 opacity-10 pointer-events-none grayscale contrast-150">
+<img alt="Dark stylized topographical map of an urban area with high contrast lines" class="w-full h-full object-cover" data-location="London" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5xflqzLnI01TV1hPURDisdxqNGS_tMqXY6327ZLbXqKG35P4sndlCNZVO8EVzagmud-VcNgQQea5QePkTJZsssn4KmzXZUuzxRQ3V4r6XdQ79t0PX5WhbTm0cWHwJSh0G4S5GO4MNKijL622WRsutfaHWs-4dnXaAe9N5kBhgadcmUVCAt4dhRbrXyqtorC-ISSSyATdyVXzn08dvONMuIJaS1iwN7y1-Lfu0S9G16t-F1JAjTNVlZ8iqHSOdyDG3EoKqJMTXMTTK"/>
+</div>
+<div class="relative z-10">
+<div class="w-32 h-32 bg-[#111111] rounded-full border border-emerald-500/30 flex items-center justify-center mb-8 mx-auto shadow-[0_0_60px_rgba(16,185,129,0.15)]">
+<span class="material-symbols-outlined text-[64px] text-emerald-500" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<h1 class="font-h1 text-h1 text-[#F5F5F5] mb-4">No active incidents</h1>
+<p class="font-body-lg text-body-lg text-[#A1A1AA] max-w-md mx-auto mb-10">
+                        The monitoring network is operational. All sectors report nominal activity and standard security protocols.
+                    </p>
+<div class="flex flex-wrap justify-center gap-4">
+<button class="bg-[#F5F5F5] text-[#080808] px-8 py-3 rounded-xl font-h2 text-sm font-bold active:scale-95 transition-all">
+                            SIMULATE INCIDENT
+                        </button>
+<button class="border border-[#2C2C2E] text-[#F5F5F5] px-8 py-3 rounded-xl font-badge font-bold hover:bg-[#111111] active:scale-95 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">history</span>
+                            VIEW LOGS
+                        </button>
+</div>
+</div>
+<div class="absolute bottom-8 left-8 right-8 flex justify-between items-end">
+<div class="text-left">
+<p class="font-tactical-label text-[#52525B] mb-1">STATION STATUS</p>
+<p class="font-tactical-data text-emerald-500">FULLY OPERATIONAL</p>
+</div>
+<div class="text-right">
+<p class="font-tactical-label text-[#52525B] mb-1">DATA LATENCY</p>
+<p class="font-tactical-data text-[#F5F5F5]">14ms</p>
+</div>
+</div>
+</div>
+<!-- Summary Bar -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="glass-card p-4 rounded-xl">
+<p class="font-tactical-label text-[#52525B]">ACTIVE AGENTS</p>
+<p class="font-h3 text-h3 text-[#F5F5F5]">0</p>
+</div>
+<div class="glass-card p-4 rounded-xl">
+<p class="font-tactical-label text-[#52525B]">OPEN CHANNELS</p>
+<p class="font-h3 text-h3 text-[#F5F5F5]">42</p>
+</div>
+<div class="glass-card p-4 rounded-xl">
+<p class="font-tactical-label text-[#52525B]">RESOURCE LOAD</p>
+<p class="font-h3 text-h3 text-[#F5F5F5]">2%</p>
+</div>
+<div class="glass-card p-4 rounded-xl border-l-4 border-emerald-500">
+<p class="font-tactical-label text-emerald-500">LAST CHECK</p>
+<p class="font-h3 text-h3 text-[#F5F5F5]">1M AGO</p>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 bg-[#080808]/95 backdrop-blur-md border-t border-[#2C2C2E] flex justify-around items-center h-20 pb-safe shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<div class="flex flex-col items-center justify-center text-[#FF3B30] font-bold font-['Space_Mono'] text-[10px] uppercase tracking-widest active:scale-90 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span>Status</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#52525B] hover:text-[#F5F5F5] font-['Space_Mono'] text-[10px] uppercase tracking-widest active:scale-90 transition-transform">
+<span class="material-symbols-outlined">assignment_late</span>
+<span>Tactical</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#52525B] hover:text-[#F5F5F5] font-['Space_Mono'] text-[10px] uppercase tracking-widest active:scale-90 transition-transform">
+<span class="material-symbols-outlined">map</span>
+<span>Map</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#52525B] hover:text-[#F5F5F5] font-['Space_Mono'] text-[10px] uppercase tracking-widest active:scale-90 transition-transform">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+<span>Admin</span>
+</div>
+</nav>
+</body></html>

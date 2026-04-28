@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#5c0002",
+                        "outline-variant": "#5d3f3b",
+                        "on-tertiary-fixed": "#001f29",
+                        "inverse-surface": "#fcdbd6",
+                        "inverse-primary": "#c0000a",
+                        "tertiary-container": "#1d9cc3",
+                        "on-tertiary": "#003545",
+                        "tertiary-fixed-dim": "#68d3fc",
+                        "on-tertiary-fixed-variant": "#004d63",
+                        "outline": "#ad8883",
+                        "surface-bright": "#493431",
+                        "surface-container-lowest": "#190a08",
+                        "on-primary": "#690003",
+                        "surface-container": "#2d1b18",
+                        "surface-tint": "#ffb4aa",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#ff5545",
+                        "on-secondary-container": "#00285c",
+                        "on-primary-fixed-variant": "#930005",
+                        "tertiary": "#68d3fc",
+                        "surface": "#1f0f0d",
+                        "background": "#1f0f0d",
+                        "surface-container-high": "#392522",
+                        "surface-dim": "#1f0f0d",
+                        "on-secondary-fixed-variant": "#004493",
+                        "secondary": "#adc6ff",
+                        "inverse-on-surface": "#402b29",
+                        "on-error": "#690005",
+                        "secondary-container": "#4b8eff",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#002e3c",
+                        "on-surface-variant": "#e7bdb7",
+                        "primary": "#ffb4aa",
+                        "on-background": "#fcdbd6",
+                        "on-surface": "#fcdbd6",
+                        "surface-container-low": "#291715",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "tertiary-fixed": "#bbe9ff",
+                        "on-secondary": "#002e69",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#44302d",
+                        "primary-fixed": "#ffdad5",
+                        "on-secondary-fixed": "#001a41",
+                        "on-primary-fixed": "#410001",
+                        "secondary-fixed": "#d8e2ff",
+                        "surface-container-highest": "#44302d",
+                        "primary-fixed-dim": "#ffb4aa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "margin": "20px",
+                        "sm": "12px",
+                        "gutter": "16px",
+                        "xs": "8px",
+                        "lg": "40px",
+                        "md": "24px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Syne"],
+                        "tactical-data": ["Space Mono"],
+                        "h3": ["Syne"],
+                        "body-lg": ["Syne"],
+                        "body-md": ["Syne"],
+                        "badge": ["Space Mono"],
+                        "tactical-label": ["Space Mono"],
+                        "h1": ["Syne"]
+                    },
+                    "fontSize": {
+                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "tactical-data": ["14px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "h3": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "badge": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "tactical-label": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "h1": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #080808;
+            color: #F5F5F5;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .crisis-card-active {
+            border-color: #FF3B30;
+            background-color: #181818;
+        }
+        .pulse-emergency {
+            box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 15px rgba(255, 59, 48, 0); }
+            100% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(255, 59, 48, 0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="antialiased font-body-md">
+<!-- Top Navigation Anchor -->
+<header class="bg-[#080808] text-[#F5F5F5] font-['Syne'] font-bold tracking-tight docked full-width top-0 border-b border-[#2C2C2E] flex justify-between items-center w-full px-6 py-4 fixed z-50">
+<div class="flex items-center gap-3">
+<div class="bg-[#FF3B30] text-[#F5F5F5] p-1 rounded-sm text-xl font-black">CC</div>
+<span class="text-xl">CRISISCOMMAND</span>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined hover:bg-[#111111] transition-colors p-2 rounded-full cursor-pointer">notifications_active</span>
+<span class="material-symbols-outlined hover:bg-[#111111] transition-colors p-2 rounded-full cursor-pointer">account_circle</span>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-md mx-auto">
+<!-- Step 2: Selection -->
+<section class="mb-12">
+<div class="mb-8">
+<span class="font-tactical-label text-badge uppercase text-[#52525B] block mb-2">STEP 02 // INCIDENT CLASSIFICATION</span>
+<h1 class="font-h1 text-h2 text-[#F5F5F5]">What's happening?</h1>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<!-- Fire Card (Selected Example) -->
+<div class="bg-[#181818] border-2 border-[#FF3B30] rounded-[20px] p-6 flex items-center gap-6 cursor-pointer active:scale-95 transition-all">
+<div class="bg-[#FF3B30]/10 p-4 rounded-xl">
+<span class="material-symbols-outlined text-[#FF3B30] text-4xl" data-icon="local_fire_department" data-weight="fill" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-[#F5F5F5]">Fire</h3>
+<p class="font-tactical-label text-[10px] text-[#FF3B30]">HIGH PRIORITY ALERT</p>
+</div>
+</div>
+<!-- Flood Card -->
+<div class="bg-[#181818] border border-[#2C2C2E] rounded-[20px] p-6 flex items-center gap-6 cursor-pointer active:scale-95 transition-all hover:bg-[#111111]">
+<div class="bg-[#007AFF]/10 p-4 rounded-xl">
+<span class="material-symbols-outlined text-[#007AFF] text-4xl" data-icon="water_drop">water_drop</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-[#F5F5F5]">Flood</h3>
+<p class="font-tactical-label text-[10px] text-[#A1A1AA]">NATURAL HAZARD</p>
+</div>
+</div>
+<!-- Earthquake Card -->
+<div class="bg-[#181818] border border-[#2C2C2E] rounded-[20px] p-6 flex items-center gap-6 cursor-pointer active:scale-95 transition-all hover:bg-[#111111]">
+<div class="bg-[#FFD60A]/10 p-4 rounded-xl">
+<span class="material-symbols-outlined text-[#FFD60A] text-4xl" data-icon="public">public</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-[#F5F5F5]">Earthquake</h3>
+<p class="font-tactical-label text-[10px] text-[#A1A1AA]">STRUCTURAL THREAT</p>
+</div>
+</div>
+<!-- Medical Card -->
+<div class="bg-[#181818] border border-[#2C2C2E] rounded-[20px] p-6 flex items-center gap-6 cursor-pointer active:scale-95 transition-all hover:bg-[#111111]">
+<div class="bg-[#32D74B]/10 p-4 rounded-xl">
+<span class="material-symbols-outlined text-[#32D74B] text-4xl" data-icon="medical_services">medical_services</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-[#F5F5F5]">Medical</h3>
+<p class="font-tactical-label text-[10px] text-[#A1A1AA]">LIFE SAFETY</p>
+</div>
+</div>
+<!-- Stampede Card -->
+<div class="bg-[#181818] border border-[#2C2C2E] rounded-[20px] p-6 flex items-center gap-6 cursor-pointer active:scale-95 transition-all hover:bg-[#111111]">
+<div class="bg-[#BF5AF2]/10 p-4 rounded-xl">
+<span class="material-symbols-outlined text-[#BF5AF2] text-4xl" data-icon="groups">groups</span>
+</div>
+<div>
+<h3 class="font-h3 text-h3 text-[#F5F5F5]">Stampede</h3>
+<p class="font-tactical-label text-[10px] text-[#A1A1AA]">CROWD CONTROL</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Step 3: Details Form -->
+<section class="mb-20">
+<div class="mb-8">
+<span class="font-tactical-label text-badge uppercase text-[#52525B] block mb-2">STEP 03 // CRITICAL DETAILS</span>
+<h2 class="font-h2 text-h2 text-[#F5F5F5]">Report Details</h2>
+</div>
+<form class="space-y-6">
+<div>
+<label class="font-tactical-label text-[#A1A1AA] mb-2 block">ROOM / FLOOR</label>
+<input class="w-full bg-[#111111] border border-[#2C2C2E] rounded-lg p-4 font-tactical-data text-[#F5F5F5] focus:outline-none focus:border-[#F5F5F5] transition-colors placeholder-[#52525B]" placeholder="e.g. Room 402, 4th Floor" type="text"/>
+</div>
+<div>
+<label class="font-tactical-label text-[#A1A1AA] mb-2 block">BRIEF DESCRIPTION</label>
+<div class="relative">
+<textarea class="w-full bg-[#111111] border border-[#2C2C2E] rounded-lg p-4 font-tactical-data text-[#F5F5F5] focus:outline-none focus:border-[#F5F5F5] transition-colors placeholder-[#52525B] resize-none" maxlength="100" placeholder="Visible smoke in the main corridor..." rows="4"></textarea>
+<div class="absolute bottom-4 right-4 font-tactical-label text-[10px] text-[#52525B]">
+                            0 / 100
+                        </div>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full bg-[#FF3B30] text-[#F5F5F5] font-h2 text-body-lg py-5 rounded-xl pulse-emergency active:scale-95 duration-100 flex items-center justify-center gap-3" type="submit">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+                        SEND EMERGENCY ALERT
+                    </button>
+<p class="font-tactical-label text-[9px] text-[#52525B] text-center mt-4 tracking-[0.2em]">BY PRESSING THIS BUTTON YOU CONFIRM A REAL EMERGENCY</p>
+</div>
+</form>
+</section>
+</main>
+<!-- Bottom Nav Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe bg-[#080808]/95 backdrop-blur-md border-t border-[#2C2C2E] shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<div class="flex flex-col items-center justify-center text-[#FF3B30] font-bold">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest mt-1">Status</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#52525B] hover:text-[#F5F5F5]">
+<span class="material-symbols-outlined" data-icon="assignment_late">assignment_late</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest mt-1">Tactical</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#52525B] hover:text-[#F5F5F5]">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest mt-1">Map</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#52525B] hover:text-[#F5F5F5]">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest mt-1">Admin</span>
+</div>
+</nav>
+<!-- Telemetry Overlay (Tactical Decoration) -->
+<div class="fixed top-24 right-4 pointer-events-none opacity-30 font-tactical-label text-[8px] text-[#F5F5F5] flex flex-col gap-1 items-end">
+<span>LAT: 34.0522° N</span>
+<span>LNG: 118.2437° W</span>
+<span>ALT: 84.2M</span>
+<div class="mt-2 flex items-center gap-1">
+<div class="w-1 h-1 bg-[#FF3B30] rounded-full"></div>
+<span>UPLINK ACTIVE</span>
+</div>
+</div>
+</body></html>

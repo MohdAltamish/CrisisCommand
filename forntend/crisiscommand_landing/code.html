@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#5c0002",
+                        "outline-variant": "#5d3f3b",
+                        "on-tertiary-fixed": "#001f29",
+                        "inverse-surface": "#fcdbd6",
+                        "inverse-primary": "#c0000a",
+                        "tertiary-container": "#1d9cc3",
+                        "on-tertiary": "#003545",
+                        "tertiary-fixed-dim": "#68d3fc",
+                        "on-tertiary-fixed-variant": "#004d63",
+                        "outline": "#ad8883",
+                        "surface-bright": "#493431",
+                        "surface-container-lowest": "#190a08",
+                        "on-primary": "#690003",
+                        "surface-container": "#2d1b18",
+                        "surface-tint": "#ffb4aa",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#ff5545",
+                        "on-secondary-container": "#00285c",
+                        "on-primary-fixed-variant": "#930005",
+                        "tertiary": "#68d3fc",
+                        "surface": "#1f0f0d",
+                        "background": "#1f0f0d",
+                        "surface-container-high": "#392522",
+                        "surface-dim": "#1f0f0d",
+                        "on-secondary-fixed-variant": "#004493",
+                        "secondary": "#adc6ff",
+                        "inverse-on-surface": "#402b29",
+                        "on-error": "#690005",
+                        "secondary-container": "#4b8eff",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#002e3c",
+                        "on-surface-variant": "#e7bdb7",
+                        "primary": "#ffb4aa",
+                        "on-background": "#fcdbd6",
+                        "on-surface": "#fcdbd6",
+                        "surface-container-low": "#291715",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "tertiary-fixed": "#bbe9ff",
+                        "on-secondary": "#002e69",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#44302d",
+                        "primary-fixed": "#ffdad5",
+                        "on-secondary-fixed": "#001a41",
+                        "on-primary-fixed": "#410001",
+                        "secondary-fixed": "#d8e2ff",
+                        "surface-container-highest": "#44302d",
+                        "primary-fixed-dim": "#ffb4aa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "64px",
+                        "margin": "20px",
+                        "sm": "12px",
+                        "gutter": "16px",
+                        "xs": "8px",
+                        "lg": "40px",
+                        "md": "24px",
+                        "base": "4px"
+                    },
+                    "fontFamily": {
+                        "h2": ["Syne"],
+                        "tactical-data": ["Space Mono"],
+                        "h3": ["Syne"],
+                        "body-lg": ["Syne"],
+                        "body-md": ["Syne"],
+                        "badge": ["Space Mono"],
+                        "tactical-label": ["Space Mono"],
+                        "h1": ["Syne"]
+                    },
+                    "fontSize": {
+                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "tactical-data": ["14px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "h3": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "badge": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "tactical-label": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "h1": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #080808;
+            color: #F5F5F5;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .role-card:hover {
+            box-shadow: 0 0 30px rgba(255, 59, 48, 0.15);
+        }
+        .pulse-red {
+            animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse-ring {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="antialiased font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar from JSON -->
+<header class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 bg-[#080808] border-b border-[#2C2C2E]">
+<div class="flex items-center gap-3">
+<div class="bg-[#FF3B30] text-[#F5F5F5] p-1 rounded-sm text-xl font-black flex items-center justify-center">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<span class="font-['Syne'] font-bold tracking-tight text-[#F5F5F5] text-2xl">CRISISCOMMAND</span>
+</div>
+<div class="hidden md:flex items-center gap-6">
+<span class="font-tactical-label text-outline uppercase">SOLUTION CHALLENGE 2026</span>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#A1A1AA] hover:text-[#F5F5F5] transition-colors">notifications_active</button>
+<button class="material-symbols-outlined text-[#A1A1AA] hover:text-[#F5F5F5] transition-colors">account_circle</button>
+</div>
+</div>
+</header>
+<main class="relative min-h-screen pt-24 pb-20 px-margin flex flex-col items-center justify-center overflow-hidden">
+<!-- Background Ambient Image -->
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+<div class="w-full h-full bg-cover bg-center" data-alt="cinematic long exposure of a luxury hotel lobby at night with deep shadows and sharp architectural lines" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9SzwnLzSM_w8jkcVF_m46K17Qf3RG0CXfSP-OkQ7Ff8CqHzYmEPCgya4fTj0LVVSgWrc7RNTb3mm3COxqEld3yzg5m2qyR4iwtdE3e90BnFDYYUR09Amgalplb8TPbImiGcKDKw8Yn6C-H6T9rXxzQbMbjHGtAoxUYPzhtPcGzZo78lBts49SFl7VPcVfM8Xe4y6evCGeNIZ8z2eLP6yK8JIrP5_rbcQcPv24dXRjNrZuPSvtsMRE6799Vu1LqLak1wFX8_U3AV8g');"></div>
+<div class="absolute inset-0 bg-gradient-to-b from-[#080808] via-transparent to-[#080808]"></div>
+</div>
+<!-- Hero Section -->
+<section class="relative z-10 text-center max-w-4xl mx-auto mb-xl">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary-container/30 bg-primary-container/10 mb-md">
+<span class="w-2 h-2 rounded-full bg-primary-container pulse-red"></span>
+<span class="font-badge text-badge text-primary-container tracking-[0.2em] uppercase">EMERGENCY RESPONSE SYSTEM</span>
+</div>
+<h1 class="font-h1 text-[56px] md:text-[80px] leading-[1] mb-xs">
+<span class="block text-[#F5F5F5]">Instant. Coordinated.</span>
+<span class="block text-[#FF3B30]">Life-saving.</span>
+</h1>
+<p class="font-body-lg text-outline-variant max-w-2xl mx-auto mt-6">
+                Real-time crisis detection and response for hospitality venues across India. Precision engineering for high-stakes environments.
+            </p>
+</section>
+<!-- Role Selection Bento Grid -->
+<section class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-gutter w-full max-w-6xl mx-auto">
+<!-- Guest Role Card -->
+<div class="role-card group bg-[#181818] border border-[#2C2C2E] p-md rounded-[20px] transition-all duration-300 hover:border-primary-container/50 flex flex-col justify-between h-full">
+<div>
+<div class="w-12 h-12 rounded-xl bg-primary-container/10 flex items-center justify-center mb-md group-hover:bg-primary-container/20 transition-colors">
+<span class="material-symbols-outlined text-primary-container" style="font-variation-settings: 'FILL' 1;">person_pin_circle</span>
+</div>
+<h3 class="font-h3 text-on-surface mb-xs">Venue Guest</h3>
+<p class="font-body-md text-outline-variant">Immediate assistance, emergency reporting, and evacuation guidance in the palm of your hand.</p>
+</div>
+<button class="mt-lg w-full py-3 px-6 rounded-full bg-[#F5F5F5] text-[#080808] font-h2 text-sm flex items-center justify-center gap-2 group-hover:scale-[0.98] transition-transform">
+                    REPORT EMERGENCY <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<!-- Staff Role Card -->
+<div class="role-card group bg-[#181818] border border-[#2C2C2E] p-md rounded-[20px] transition-all duration-300 hover:border-tertiary/50 flex flex-col justify-between h-full">
+<div>
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center mb-md group-hover:bg-tertiary/20 transition-colors">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">engineering</span>
+</div>
+<h3 class="font-h3 text-on-surface mb-xs">Hospitality Staff</h3>
+<p class="font-body-md text-outline-variant">Receive tactical alerts, coordinate room sweeps, and communicate with emergency responders.</p>
+</div>
+<button class="mt-lg w-full py-3 px-6 rounded-full border border-tertiary/30 text-tertiary font-h2 text-sm flex items-center justify-center gap-2 hover:bg-tertiary/10 transition-all">
+                    STAFF PORTAL <span class="material-symbols-outlined text-sm">login</span>
+</button>
+</div>
+<!-- Admin Role Card -->
+<div class="role-card group bg-[#181818] border border-[#2C2C2E] p-md rounded-[20px] transition-all duration-300 hover:border-secondary/50 flex flex-col justify-between h-full">
+<div>
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-md group-hover:bg-secondary/20 transition-colors">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">security</span>
+</div>
+<h3 class="font-h3 text-on-surface mb-xs">System Admin</h3>
+<p class="font-body-md text-outline-variant">Command center operations, data telemetry, and multisite security management for operations.</p>
+</div>
+<button class="mt-lg w-full py-3 px-6 rounded-full border border-[#2C2C2E] text-[#F5F5F5] font-h2 text-sm flex items-center justify-center gap-2 hover:bg-white/5 transition-all">
+                    ADMIN DASHBOARD <span class="material-symbols-outlined text-sm">monitoring</span>
+</button>
+</div>
+</section>
+<!-- Telemetry Readout Decorations -->
+<div class="mt-xl hidden md:flex items-center gap-12 border-t border-[#2C2C2E]/30 pt-md w-full max-w-6xl">
+<div class="flex flex-col">
+<span class="font-tactical-label text-[10px] text-outline uppercase">Active Nodes</span>
+<span class="font-tactical-data text-primary">1,204 ONLINE</span>
+</div>
+<div class="flex flex-col">
+<span class="font-tactical-label text-[10px] text-outline uppercase">Response Latency</span>
+<span class="font-tactical-data text-[#F5F5F5]">142ms</span>
+</div>
+<div class="flex flex-col">
+<span class="font-tactical-label text-[10px] text-outline uppercase">System Status</span>
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+<span class="font-tactical-data text-[#F5F5F5]">OPTIMAL</span>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar from JSON (Suppressed on landing but following directive to use it if destination rule applies) -->
+<!-- The user is selecting a role, so technically this is a "Selection" splash, which usually excludes nav per rules -->
+<!-- However, to demonstrate the JSON execution for "BottomNavBar": -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe bg-[#080808]/95 backdrop-blur-md border-t border-[#2C2C2E] shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<div class="flex flex-col items-center justify-center text-[#FF3B30] font-bold">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest">Status</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#52525B]">
+<span class="material-symbols-outlined" data-icon="assignment_late">assignment_late</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest">Tactical</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#52525B]">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest">Map</span>
+</div>
+<div class="flex flex-col items-center justify-center text-[#52525B]">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest">Admin</span>
+</div>
+</nav>
+</body></html>

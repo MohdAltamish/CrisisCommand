@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#93000a",
+                        "outline-variant": "#5d3f3b",
+                        "on-secondary-fixed-variant": "#004493",
+                        "inverse-surface": "#fcdbd6",
+                        "on-background": "#fcdbd6",
+                        "on-tertiary-container": "#002e3c",
+                        "on-error": "#690005",
+                        "on-tertiary-fixed": "#001f29",
+                        "primary-fixed-dim": "#ffb4aa",
+                        "surface-container": "#2d1b18",
+                        "inverse-primary": "#c0000a",
+                        "secondary": "#adc6ff",
+                        "on-secondary-fixed": "#001a41",
+                        "on-error-container": "#ffdad6",
+                        "on-primary": "#690003",
+                        "surface-container-lowest": "#190a08",
+                        "on-tertiary": "#003545",
+                        "surface-tint": "#ffb4aa",
+                        "surface-container-low": "#291715",
+                        "surface": "#1f0f0d",
+                        "on-secondary-container": "#00285c",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "primary-container": "#ff5545",
+                        "background": "#1f0f0d",
+                        "tertiary-fixed": "#bbe9ff",
+                        "error": "#ffb4ab",
+                        "secondary-container": "#4b8eff",
+                        "outline": "#ad8883",
+                        "secondary-fixed": "#d8e2ff",
+                        "surface-variant": "#44302d",
+                        "on-tertiary-fixed-variant": "#004d63",
+                        "tertiary-container": "#1d9cc3",
+                        "surface-container-high": "#392522",
+                        "primary": "#ffb4aa",
+                        "on-surface-variant": "#e7bdb7",
+                        "on-surface": "#fcdbd6",
+                        "on-primary-fixed": "#410001",
+                        "on-primary-container": "#5c0002",
+                        "tertiary-fixed-dim": "#68d3fc",
+                        "surface-container-highest": "#44302d",
+                        "primary-fixed": "#ffdad5",
+                        "on-primary-fixed-variant": "#930005",
+                        "surface-dim": "#1f0f0d",
+                        "tertiary": "#68d3fc",
+                        "inverse-on-surface": "#402b29",
+                        "surface-bright": "#493431",
+                        "on-secondary": "#002e69"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "8px",
+                        "margin": "20px",
+                        "xl": "64px",
+                        "sm": "12px",
+                        "gutter": "16px",
+                        "md": "24px",
+                        "base": "4px",
+                        "lg": "40px"
+                    },
+                    "fontFamily": {
+                        "tactical-data": ["Space Mono"],
+                        "h2": ["Syne"],
+                        "h1": ["Syne"],
+                        "body-lg": ["Syne"],
+                        "badge": ["Space Mono"],
+                        "tactical-label": ["Space Mono"],
+                        "h3": ["Syne"],
+                        "body-md": ["Syne"]
+                    },
+                    "fontSize": {
+                        "tactical-data": ["14px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                        "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "h1": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                        "badge": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
+                        "tactical-label": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                        "h3": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-[#080808] text-on-surface font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation -->
+<header class="bg-[#080808] border-b border-[#2C2C2E] fixed top-0 left-0 w-full z-[100] flex justify-between items-center px-4 h-16">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[#FF3B30] text-3xl" data-icon="bolt">bolt</span>
+<span class="font-['Syne'] uppercase tracking-widest text-sm font-bold text-[#F5F5F5]">COMMAND</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#555555] text-2xl" data-icon="emergency_home">emergency_home</span>
+<span class="material-symbols-outlined text-[#F5F5F5] text-2xl" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="pt-16 pb-24 px-4 overflow-x-hidden">
+<!-- Hero Section -->
+<section class="mt-lg mb-xl">
+<div class="flex flex-col gap-base">
+<div class="inline-flex items-center gap-2 mb-sm">
+<span class="h-[1px] w-12 bg-primary"></span>
+<span class="font-tactical-label text-tactical-label text-primary uppercase">Elite Response Interface</span>
+</div>
+<h1 class="font-h1 text-h1 text-[#F5F5F5]">
+                    Instant.<br/>
+                    Coordinated.<br/>
+<span class="text-[#FF3B30]">Life-saving.</span>
+</h1>
+<p class="mt-md font-body-lg text-body-lg text-on-surface-variant max-w-sm">
+                    High-stakes crisis management for aerospace and urban security environments.
+                </p>
+</div>
+<!-- Hero Tactical Detail -->
+<div class="mt-lg p-md bg-[#111111] border border-[#2C2C2E] rounded-xl flex items-center justify-between">
+<div>
+<p class="font-tactical-label text-badge text-on-surface-variant uppercase mb-1">System Status</p>
+<p class="font-tactical-data text-tactical-data text-tertiary flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+                        ALL NODES ACTIVE
+                    </p>
+</div>
+<div class="text-right">
+<p class="font-tactical-label text-badge text-on-surface-variant uppercase mb-1">Response Time</p>
+<p class="font-tactical-data text-tactical-data text-[#F5F5F5]">0.4ms</p>
+</div>
+</div>
+</section>
+<!-- Role Access Cards -->
+<section class="flex flex-col gap-gutter">
+<!-- Guest Role Card -->
+<div class="bg-[#181818] border border-[#2C2C2E] border-l-4 border-l-[#FF3B30] rounded-[20px] overflow-hidden group">
+<div class="p-md">
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="font-tactical-label text-tactical-label bg-[#111111] px-2 py-1 rounded text-[#FF3B30] border border-[#FF3B30]/30">GUEST-01</span>
+<h3 class="font-h3 text-h3 mt-2 text-[#F5F5F5]">Public Citizen</h3>
+</div>
+<span class="material-symbols-outlined text-[#FF3B30] text-3xl" data-icon="public">public</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-lg">Access emergency reporting tools and localized threat intelligence without authentication.</p>
+<button class="w-full bg-[#FF3B30] text-white font-h2 text-body-lg py-4 rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+                        REPORT EMERGENCY
+                        <span class="material-symbols-outlined" data-icon="emergency">emergency</span>
+</button>
+</div>
+</div>
+<!-- Staff Role Card -->
+<div class="bg-[#181818] border border-[#2C2C2E] border-l-4 border-l-secondary-container rounded-[20px] overflow-hidden group">
+<div class="p-md">
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="font-tactical-label text-tactical-label bg-[#111111] px-2 py-1 rounded text-secondary-container border border-secondary-container/30">STAFF-SEC</span>
+<h3 class="font-h3 text-h3 mt-2 text-[#F5F5F5]">Operator</h3>
+</div>
+<span class="material-symbols-outlined text-secondary-container text-3xl" data-icon="security">security</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-lg">Full access to tactical dashboards, unit dispatch, and telemetry readouts.</p>
+<button class="w-full bg-secondary-container text-on-secondary-container font-h2 text-body-lg py-4 rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+                        STAFF LOGIN
+                        <span class="material-symbols-outlined" data-icon="login">login</span>
+</button>
+</div>
+</div>
+<!-- Admin Role Card -->
+<div class="bg-[#181818] border border-[#2C2C2E] border-l-4 border-l-primary-container rounded-[20px] overflow-hidden group">
+<div class="p-md">
+<div class="flex justify-between items-start mb-md">
+<div>
+<span class="font-tactical-label text-tactical-label bg-[#111111] px-2 py-1 rounded text-primary-container border border-primary-container/30">ROOT-ADMIN</span>
+<h3 class="font-h3 text-h3 mt-2 text-[#F5F5F5]">Command Chief</h3>
+</div>
+<span class="material-symbols-outlined text-primary-container text-3xl" data-icon="admin_panel_settings">admin_panel_settings</span>
+</div>
+<p class="font-body-md text-on-surface-variant mb-lg">Executive oversight, protocol override authority, and system configuration.</p>
+<button class="w-full bg-primary-container text-on-primary-container font-h2 text-body-lg py-4 rounded-xl flex items-center justify-center gap-2 active:scale-[0.98] transition-transform">
+                        ADMIN CONSOLE
+                        <span class="material-symbols-outlined" data-icon="settings_suggest">settings_suggest</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Visual Background Decoration (Abstract) -->
+<div class="fixed bottom-0 right-0 -z-10 opacity-10 pointer-events-none">
+<img alt="Technical blueprint grid with glowing dots and wireframe topography in deep charcoal and red" class="w-[400px]" data-alt="Technical blueprint grid with glowing dots and wireframe topography in deep charcoal and red" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzU_kTDrfYIya6e1b4hHHWgijGwYmH2ZfOhCzceVctqI2rEv-joZZyUZKoA8dVofBtXojPlxcD2wR6NHtW2kzmxWJgxG-JKTwBp9tT9KVYwBM-nxCcleiA5F6DlwKXZHr4zPfQTgr1Nz39dIEUVOJDCCj_UWaZLwP7OPBE1pVmG7VYw3QleWw64hSpXB_9Xw5ovLtzlt-nwsy_tZ1fasiekdbs5jiVChDZnr_J93dIiD85MWiHbe6pHX69-DL8wrRuLtEpPKa52pCP"/>
+</div>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center bg-[#080808] border-t border-[#2C2C2E] z-50 h-20">
+<a class="flex flex-col items-center justify-center text-[#F5F5F5] border-t-2 border-[#FF3B30] pt-2 pb-3 px-4 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-tighter mt-1">Status</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#555555] pt-2 pb-3 px-4 hover:text-[#F5F5F5] transition-all active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-tighter mt-1">Tactical</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#555555] pt-2 pb-3 px-4 hover:text-[#F5F5F5] transition-all active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-tighter mt-1">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#555555] pt-2 pb-3 px-4 hover:text-[#F5F5F5] transition-all active:scale-95 duration-100" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-tighter mt-1">Admin</span>
+</a>
+</nav>
+</body></html>

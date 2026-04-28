@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;700;800&amp;family=Space+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-container": "#5c0002",
+                    "outline-variant": "#5d3f3b",
+                    "on-tertiary-fixed": "#001f29",
+                    "inverse-surface": "#fcdbd6",
+                    "inverse-primary": "#c0000a",
+                    "tertiary-container": "#1d9cc3",
+                    "on-tertiary": "#003545",
+                    "tertiary-fixed-dim": "#68d3fc",
+                    "on-tertiary-fixed-variant": "#004d63",
+                    "outline": "#ad8883",
+                    "surface-bright": "#493431",
+                    "surface-container-lowest": "#190a08",
+                    "on-primary": "#690003",
+                    "surface-container": "#2d1b18",
+                    "surface-tint": "#ffb4aa",
+                    "on-error-container": "#ffdad6",
+                    "primary-container": "#ff5545",
+                    "on-secondary-container": "#00285c",
+                    "on-primary-fixed-variant": "#930005",
+                    "tertiary": "#68d3fc",
+                    "surface": "#1f0f0d",
+                    "background": "#1f0f0d",
+                    "surface-container-high": "#392522",
+                    "surface-dim": "#1f0f0d",
+                    "on-secondary-fixed-variant": "#004493",
+                    "secondary": "#adc6ff",
+                    "inverse-on-surface": "#402b29",
+                    "on-error": "#690005",
+                    "secondary-container": "#4b8eff",
+                    "error-container": "#93000a",
+                    "on-tertiary-container": "#002e3c",
+                    "on-surface-variant": "#e7bdb7",
+                    "primary": "#ffb4aa",
+                    "on-background": "#fcdbd6",
+                    "on-surface": "#fcdbd6",
+                    "surface-container-low": "#291715",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "tertiary-fixed": "#bbe9ff",
+                    "on-secondary": "#002e69",
+                    "error": "#ffb4ab",
+                    "surface-variant": "#44302d",
+                    "primary-fixed": "#ffdad5",
+                    "on-secondary-fixed": "#001a41",
+                    "on-primary-fixed": "#410001",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-container-highest": "#44302d",
+                    "primary-fixed-dim": "#ffb4aa"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xl": "64px",
+                    "margin": "20px",
+                    "sm": "12px",
+                    "gutter": "16px",
+                    "xs": "8px",
+                    "lg": "40px",
+                    "md": "24px",
+                    "base": "4px"
+            },
+            "fontFamily": {
+                    "h2": ["Syne"],
+                    "tactical-data": ["Space Mono"],
+                    "h3": ["Syne"],
+                    "body-lg": ["Syne"],
+                    "body-md": ["Syne"],
+                    "badge": ["Space Mono"],
+                    "tactical-label": ["Space Mono"],
+                    "h1": ["Syne"]
+            },
+            "fontSize": {
+                    "h2": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                    "tactical-data": ["14px", {"lineHeight": "1.2", "fontWeight": "400"}],
+                    "h3": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.5", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "badge": ["10px", {"lineHeight": "1", "fontWeight": "700"}],
+                    "tactical-label": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700"}],
+                    "h1": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #080808;
+            color: #F5F5F5;
+            -webkit-font-smoothing: antialiased;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .success-pulse {
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+            animation: pulse-green 2s infinite;
+        }
+        @keyframes pulse-green {
+            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(34, 197, 94, 0); }
+            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body-md">
+<!-- TopAppBar -->
+<header class="bg-[#080808] text-[#F5F5F5] font-['Syne'] font-bold tracking-tight docked full-width top-0 border-b border-[#2C2C2E] flex justify-between items-center w-full px-6 py-4 fixed z-50">
+<div class="flex items-center gap-2">
+<div class="bg-[#FF3B30] text-[#F5F5F5] p-1 rounded-sm text-xl font-black">CC</div>
+<span class="uppercase tracking-tighter">CRISISCOMMAND</span>
+</div>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#F5F5F5]" data-icon="notifications_active">notifications_active</span>
+<span class="material-symbols-outlined text-[#F5F5F5]" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="min-h-screen pt-24 pb-32 px-6 flex flex-col items-center justify-center text-center">
+<!-- Status Indicator -->
+<div class="relative mb-8">
+<div class="w-32 h-32 rounded-full border-4 border-green-500/30 flex items-center justify-center success-pulse">
+<div class="w-24 h-24 rounded-full bg-green-500 flex items-center justify-center">
+<span class="material-symbols-outlined text-black text-6xl font-bold" data-icon="check" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+</div>
+</div>
+<!-- Confirmation Message -->
+<section class="mb-10">
+<h1 class="font-h1 text-h1 text-[#F5F5F5] mb-4">Alert Sent</h1>
+<p class="font-body-lg text-body-lg text-[#A1A1AA] max-w-xs mx-auto">
+                Help is on the way. Stay calm and follow staff instructions.
+            </p>
+</section>
+<!-- Emergency Protocols Bento-style Card -->
+<div class="w-full max-w-md bg-[#181818] border border-[#2C2C2E] rounded-[20px] p-6 text-left relative overflow-hidden">
+<!-- Decorative corner accent -->
+<div class="absolute top-0 right-0 p-3 opacity-10">
+<span class="material-symbols-outlined text-4xl" data-icon="security">security</span>
+</div>
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-tertiary" data-icon="priority_high">priority_high</span>
+<h2 class="font-tactical-label text-tactical-label uppercase tracking-widest text-[#F5F5F5]">EMERGENCY PROTOCOLS</h2>
+</div>
+<ul class="space-y-4">
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#2C2C2E] flex items-center justify-center">
+<span class="text-[10px] font-bold font-tactical-data">01</span>
+</div>
+<p class="font-body-md text-body-md text-[#F5F5F5]">Do NOT use elevators. Use marked emergency stairwells only.</p>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#2C2C2E] flex items-center justify-center">
+<span class="text-[10px] font-bold font-tactical-data">02</span>
+</div>
+<p class="font-body-md text-body-md text-[#F5F5F5]">Leave personal belongings behind. Evacuate immediately.</p>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-6 h-6 rounded-full bg-[#2C2C2E] flex items-center justify-center">
+<span class="text-[10px] font-bold font-tactical-data">03</span>
+</div>
+<p class="font-body-md text-body-md text-[#F5F5F5]">Wait for further instructions at the designated assembly point.</p>
+</li>
+</ul>
+<div class="mt-8 pt-6 border-t border-[#2C2C2E] flex justify-between items-center">
+<div class="flex flex-col">
+<span class="font-tactical-label text-[10px] text-[#52525B] uppercase mb-1">Incident Token</span>
+<span class="font-tactical-data text-tactical-data text-[#A1A1AA] tracking-widest uppercase">REF: A3F8B2C1</span>
+</div>
+<div class="bg-[#111111] px-3 py-1 rounded border border-[#2C2C2E]">
+<span class="font-badge text-badge text-green-500 uppercase">ACTIVE</span>
+</div>
+</div>
+</div>
+<!-- Support Actions -->
+<div class="mt-12 grid grid-cols-2 gap-4 w-full max-w-md">
+<button class="flex flex-col items-center justify-center bg-[#111111] border border-[#2C2C2E] py-4 rounded-xl hover:bg-[#181818] transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined mb-2 text-tertiary" data-icon="call">call</span>
+<span class="font-tactical-label text-[10px] uppercase">Contact Concierge</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-[#111111] border border-[#2C2C2E] py-4 rounded-xl hover:bg-[#181818] transition-colors active:scale-95 duration-100">
+<span class="material-symbols-outlined mb-2 text-tertiary" data-icon="location_on">location_on</span>
+<span class="font-tactical-label text-[10px] uppercase">My Location</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar (Status Active) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center h-20 pb-safe bg-[#080808]/95 backdrop-blur-md border-t border-[#2C2C2E] shadow-[0_-4px_20px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center text-[#FF3B30] font-bold" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest mt-1">Status</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#52525B] hover:text-[#F5F5F5] transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="assignment_late">assignment_late</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest mt-1">Tactical</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#52525B] hover:text-[#F5F5F5] transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="map">map</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest mt-1">Map</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#52525B] hover:text-[#F5F5F5] transition-colors active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-['Space_Mono'] text-[10px] uppercase tracking-widest mt-1">Admin</span>
+</a>
+</nav>
+</body></html>
