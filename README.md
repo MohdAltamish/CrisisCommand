@@ -17,6 +17,9 @@
 
 > **Submission for Google Solution Challenge 2026**
 
+### 🎥 Demo Video
+[Watch the CrisisCommand Demo](https://drive.google.com/file/d/1tYFsaUpCWO2lbBDB9cGcoFdG3qzdHWug/view?usp=drive_link)
+
 ---
 
 ## 📑 Table of Contents
@@ -29,7 +32,8 @@
 6. [Architecture & Workflow](#-architecture--workflow)
 7. [Installation & Setup](#-installation--setup)
 8. [Demo Flow (For Judges)](#-demo-flow-for-judges)
-9. [Future Roadmap](#-future-roadmap)
+9. [Screenshots](#-screenshots)
+10. [Future Roadmap](#-future-roadmap)
 
 ---
 
@@ -187,6 +191,28 @@ To evaluate the core functionality of CrisisCommand:
    - Click **Acknowledge** and see the status change across the network.
 6. **Admin View:**
    - Open `/admin` to view live charts (Recharts) aggregating incident data.
+
+---
+
+## 📸 Screenshots
+
+Here is a visual overview of the CrisisCommand platform:
+
+### Landing Page
+![Landing Page](./Screenshots/01_Landing_Page.png)
+
+### Guest SOS Flow
+![Guest SOS](./Screenshots/02_Guest_SOS.png)
+![Guest Reporting](./Screenshots/03_Guest_Reporting.png)
+
+### Staff Dashboard
+![Staff Dashboard Overview](./Screenshots/04_Staff_Dashboard.png)
+![AI Response Panel](./Screenshots/05_Staff_Dashboard_AI.png)
+![Tactical Map View](./Screenshots/06_Staff_Dashboard_Map.png)
+
+### Admin Analytics
+![Admin Dashboard Overview](./Screenshots/07_Admin_Dashboard.png)
+![Admin Recent Incidents](./Screenshots/08_Admin_Incidents.png)
 
 ---
 
