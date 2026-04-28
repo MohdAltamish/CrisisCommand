@@ -227,3 +227,10 @@ Here is a visual overview of the CrisisCommand platform:
 <div align="center">
   <i>Built with ❤️ for Google Solution Challenge 2026</i>
 </div>
+
+ ## 👨‍💻 Author
+
+**Mohd Altamish**
+- **LinkedIn:** [Mohd Altamish](https://www.linkedin.com/in/mohdaltamish/)
+- **GitHub:** [Mohd Altamish](https://github.com/mohd-altamish)
+
