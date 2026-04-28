@@ -1,6 +1,3 @@
-<div align="center">
-  <img src="https://via.placeholder.com/150x150/ff3b30/ffffff?text=CC" alt="CrisisCommand Logo" width="120" />
-
   # 🚨 CrisisCommand
   **Instant. Coordinated. Life-saving.**
   
